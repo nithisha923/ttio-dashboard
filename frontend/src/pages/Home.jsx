@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Home() {
   const services = [
     {
@@ -50,7 +52,7 @@ function Home() {
           >
             <div style={{ textAlign: "center", marginBottom: "20px" }}>
               <img
-                src="/logos/ttio-logo.png"
+                src={`${import.meta.env.BASE_URL}logos/ttio-logo.png`}
                 alt="TTIO Logo"
                 style={{
                   maxWidth: "440px",
@@ -88,8 +90,8 @@ function Home() {
               </p>
 
               <div style={{ display: "flex", gap: "14px", flexWrap: "wrap" }}>
-                <a
-                  href="/login"
+                <Link
+                  to="/login"
                   style={{
                     padding: "12px 22px",
                     background: "#f2c300",
@@ -101,10 +103,10 @@ function Home() {
                   }}
                 >
                   Login
-                </a>
+                </Link>
 
-                <a
-                  href="/login"
+                <Link
+                  to="/login"
                   style={{
                     padding: "12px 22px",
                     border: "1px solid #cccccc",
@@ -116,7 +118,7 @@ function Home() {
                   }}
                 >
                   Start Disclosure
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -306,8 +308,8 @@ function Home() {
             Log in to access the platform and track your innovation submissions.
           </p>
 
-          <a
-            href="/login"
+          <Link
+            to="/login"
             style={{
               padding: "12px 26px",
               background: "#f2c300",
@@ -320,7 +322,7 @@ function Home() {
             }}
           >
             Login to Continue
-          </a>
+          </Link>
         </div>
       </section>
     </div>
