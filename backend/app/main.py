@@ -10,16 +10,23 @@ from app import models
 
 app = FastAPI(title="TTIO Dashboard API")
 
+# Create tables
 Base.metadata.create_all(bind=engine)
 
+# ✅ CORS FIX (IMPORTANT)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_origins=[
+        "http://localhost:5173",
+        "http://localhost:3000",
+        "https://nithisha923.github.io"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+# Routers
 app.include_router(inventions_router)
 app.include_router(auth_router)
 
